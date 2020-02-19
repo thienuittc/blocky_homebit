@@ -152,10 +152,10 @@ Blockly.Python["block_light_sensor"] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.Blocks["block_led"] = {
+Blockly.Blocks["block_led_home"] = {
   init: function() {
     this.jsonInit({
-      type: "block_led",
+      type: "block_led_home",
       message0: "điều chỉnh độ sáng đèn %1 %2 %%",
       args0: [
         {
@@ -184,7 +184,7 @@ Blockly.Blocks["block_led"] = {
   }
 };
 
-Blockly.Python["block_led"] = function(block) {
+Blockly.Python["block_led_home"] = function(block) {
   Blockly.Python.definitions_["import_yolobit"] = "from yolobit import *";
   var dropdown_name = block.getFieldValue("NAME");
   var value_name = Blockly.Python.valueToCode(

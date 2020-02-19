@@ -359,7 +359,7 @@ Blockly.Blocks["block_dht_create"] = {
         {
           type: "field_variable",
           name: "cambiennhietdo",
-          variable: "cảm biến nhiệt độ"
+          variable: "cảm biến nhiệt độ & độ ẩm"
         },
         {
           type: "field_dropdown",

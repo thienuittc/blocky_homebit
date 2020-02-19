@@ -390,7 +390,7 @@ Blockly.Blocks["block_dht_measure"] = {
         {
           type: "field_variable",
           name: "cambiennhietdo",
-          variable: "cảm biến nhiệt độ"
+          variable: "cảm biến nhiệt độ & độ ẩm"
         }
       ],
       previousStatement: null,
@@ -410,7 +410,7 @@ Blockly.Blocks["block_dht_read"] = {
         {
           type: "field_variable",
           name: "cambiennhietdo",
-          variable: "cảm biến nhiệt độ"
+          variable: "cảm biến nhiệt độ & độ ẩm"
         },
         {
           type: "field_dropdown",

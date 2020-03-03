@@ -1,8 +1,8 @@
 {
     "name": "Nhà thông minh",
-    "description": "123",
+    "description": "Mục mở rộng dành cho bộ sản phẩm nhà thông minh",
     "libs": [
-        "keypad.py"
+        "keypad121.py"
     ],
     "blocks": [
         "definition.js"

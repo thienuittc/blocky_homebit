@@ -1,5 +1,5 @@
 <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-  <category name="HOMEBIT" colour="#cb2026" icon="road">
+  <category name="HOMEBIT" colour="#42bfbf" icon="icon-home">
     <block type="block_sound"/>
     <block type="block_flipled"/>
     <block type="block_led_home">

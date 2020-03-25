@@ -428,56 +428,8 @@ Blockly.Blocks["block_dht_read"] = {
     });
   }
 };
-Blockly.Blocks["block_home_servo"] = {
-  init: function() {
-    this.jsonInit({
-  "type": "block_home_servo",
-  "message0": "quay servo chân %1 góc (0-180 độ) %2",
-  "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "port",
-      "options": [
-        [
-          "P0",
-          "pin0"
-        ],
-        [
-          "P1",
-          "pin1"
-        ],
-        [
-          "P2",
-          "pin2"
-        ],
-        [
-          "P3",
-          "pin3"
-        ]
-      ]
-    },
-    {
-      "type": "input_value",
-      "name": "gocservo",
-      "check": "Number"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 180,
-  "tooltip": "",
-  "helpUrl": ""
-});
-  }
-};
 
-Blockly.JavaScript['block_home_servo'] = function(block) {
-  var dropdown_name = block.getFieldValue('port');
-  var value_name = Blockly.JavaScript.valueToCode(block, 'gocservo', Blockly.JavaScript.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = dropdown_name+'.servo_write('+value_name+')\n';
-  return code;
-};
+
 // Blockly.Python["dht_create"] = function(block) {
 //   var variable_sensor = Blockly.Python.variableDB_.getName(
 //     block.getFieldValue("SENSOR"),
@@ -648,3 +600,51 @@ Blockly.Python['block_clearlistkey'] = function(block) {
 };
 
 
+Blockly.Blocks['block_home_servo'] = {
+  init: function() {
+    this.jsonInit(
+      {
+        "type": "block_home_servo",
+        "message0": "quay servo chân %1 góc (0-180 độ) %2",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "port",
+            "options": [
+              [
+                "P0",
+                "pin0"
+              ],
+              [
+                "P1",
+                "pin1"
+              ],
+              [
+                "P2",
+                "pin2"
+              ],
+              [
+                "P3",
+                "Pin3"
+              ]
+            ]
+          },
+          {
+            "type": "input_value",
+            "name": "gocservo"
+          }
+        ],
+        "colour": 230,
+        "tooltip": "",
+        "helpUrl": ""
+      }
+    );
+  }
+};
+Blockly.JavaScript['block_home_servo'] = function(block) {
+  var dropdown_port = block.getFieldValue('port');
+  var value_goc = Blockly.JavaScript.valueToCode(block, 'gocservo', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = dropdown_port+'.servo_write('+value_goc+');\n';
+  return code;
+};

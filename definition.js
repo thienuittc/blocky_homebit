@@ -634,7 +634,7 @@ Blockly.Blocks['block_home_servo'] = {
             "name": "gocservo"
           }
         ],
-        "colour": 230,
+        "colour": 180,
         "tooltip": "",
         "helpUrl": ""
       }

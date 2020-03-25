@@ -21,6 +21,6 @@
     <block type="block_clearlistkey"/>
 	<block type="block_home_servo">
 	<value name="gocservo"><shadow type="math_number"><field name="NUM">90</field></shadow></value>
-    </block
+    </block>
   </category>
 </xml>

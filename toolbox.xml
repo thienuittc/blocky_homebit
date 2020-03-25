@@ -13,7 +13,9 @@
     <block type="block_dht_create"/>
     <block type="block_dht_measure"/>
     <block type="block_dht_read"/>
-    <block type="block_touchpad_istouch"/>
+    <block type="block_touchpad_istouch">
+	<value name="NAME"><shadow type="math_number"><field name="NUM">0</field></shadow></value>
+    </block>
     <block type="block_readkeypad"/>
     <block type="block_checkkeypad"/>
     <block type="block_clearlistkey"/>

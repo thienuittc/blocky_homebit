@@ -73,14 +73,7 @@ Blockly.Python["block_flipled"] = function(block) {
   
   // TODO: Assemble Python into code variable.
   var code;
-  if (dropdown_action == 1 ){
-    code = dropdown_name+".write_digital(1)\n";
-    Blockly.Python.definitions_["create_state"+dropdown_name] = dropdown_name+"_state=1";}
-  else if (dropdown_action==2){
-    Blockly.Python.definitions_["create_state"+dropdown_name] = dropdown_name+"_state=0";
-  code = dropdown_name+".write_digital(0)\n";}
-  else if (dropdown_action==3)
-  code = dropdown_name+"_state=1-"+dropdown_name+"_state\n"+dropdown_name+".write_digital("+dropdown_name+"_state)\n";
+  code = dropdown_name+"_state=1-"+dropdown_name+"_state\n"+dropdown_name+".write_digital(1-"+dropdown_name+".read_digital())\n";
   return code;
 };
 

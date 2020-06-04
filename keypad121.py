@@ -22,34 +22,15 @@ MPR121_MAX_HALF_DELTA_FALLING = const(0x2F) # Max half delta (falling)
 MPR121_NOISE_HALF_DELTA_FALLING = const(0x30) # Noise half delta (falling)
 MPR121_NOISE_COUNT_LIMIT_FALLING = const(0x31) # Noise count limit (falling)
 MPR121_FILTER_DELAY_COUNT_FALLING = const(0x32) # Filter delay count (falling)
-# There is no max half delta for touched
 MPR121_NOISE_HALF_DELTA_TOUCHED = const(0x33) # Noise half delta (touched)
 MPR121_NOISE_COUNT_LIMIT_TOUCHED = const(0x34) # Noise count limit (touched)
 MPR121_FILTER_DELAY_COUNT_TOUCHED = const(0x35) # Filter delay count (touched)
-# (0x41~0x5A) Touch / release threshold
 MPR121_TOUCH_THRESHOLD = const(0x41) # Touch threshold (0th, += 2 for each electrode up to 11th)
 MPR121_RELEASE_THRESHOLD = const(0x42) # Release threshold (0th, += 2 for each electrode up to 11th)
-MPR121_DEBOUNCE = const(0x5B) # Debounce
-# (0x5C~0x5D) Filter and global CDC CDT configuration
+MPR121_DEBOUNCE = const(0x5B)
 MPR121_CONFIG1 = const(0x5C) # FFI (first filter iterations), CDC (charge/discharge current)
 MPR121_CONFIG2 = const(0x5D) # CDT (charge/discharge time), SFI (second filter iterations), ESI (electrode sample interval)
-# (0x5F~0x6B) Electrode charge current
-# (0x6C~0x72) Electrode charge time
 MPR121_ELECTRODE_CONFIG = const(0x5E) # Electrode configuration register
-# (0x73~0x7A) GPIO
-# (0x73) GPIO control 0
-# (0x74) GPIO control 1
-# (0x75) GPIO data
-# (0x76) GPIO direction
-# (0x77) GPIO enable
-# (0x78) GPIO data set
-# (0x79) GPIO data clear
-# (0x7A) GPIO data toggle
-# (0x7B) Auto-config control 0
-# (0x7C) Auto-config control 1
-# (0x7D) Auto-config upper-side limit
-# (0x7E) Auto-config lower-side limit
-# (0x7F) Auto-config target level
 MPR121_SOFT_RESET = const(0x80) # Soft reset
 
 class MPR121:
@@ -104,23 +85,11 @@ class MPR121:
         self._register8(MPR121_FILTER_DELAY_COUNT_RISING, 0x00)
         self._register8(MPR121_FILTER_DELAY_COUNT_FALLING, 0x00)
         self._register8(MPR121_FILTER_DELAY_COUNT_TOUCHED, 0x00)
-
-        # Set config registers
-        # Debounce Touch, DT=0 (increase up to 7 to reduce noise)
-        # Debounce Release, DR=0 (increase up to 7 to reduce noise)
         self._register8(MPR121_DEBOUNCE, 0x00)
         # First Filter Iterations, FFI=0 (6x samples taken)
         # Charge Discharge Current, CDC=16 (16uA)
         self._register8(MPR121_CONFIG1, 0x10)
-        # Charge Discharge Time, CDT=1 (0.5us charge time)
-        # Second Filter Iterations, SFI=0 (4x samples taken)
-        # Electrode Sample Interval, ESI=0 (1ms period)
         self._register8(MPR121_CONFIG2, 0x20)
-
-        # Enable all electrodes - enter run mode
-        # Calibration Lock, CL=10 (baseline tracking enabled, initial value 5 high bits)
-        # Proximity Enable, ELEPROX_EN=0 (proximity detection disabled)
-        # Electrode Enable, ELE_EN=15 (enter run mode for 12 electrodes)
         self._register8(MPR121_ELECTRODE_CONFIG, 0x8F)
 
     def set_thresholds(self, touch, release, electrode=None):

@@ -73,7 +73,10 @@ Blockly.Python["block_flipled"] = function(block) {
   
   // TODO: Assemble Python into code variable.
   var code;
+  if (dropdown_action == 3)
   code = dropdown_name+".write_digital(1-"+dropdown_name+".read_digital())\n";
+  else
+    code = dropdown_name+".write_digital("+dropdown_action+")\n";
   return code;
 };
 

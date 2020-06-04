@@ -42,7 +42,7 @@ Blockly.Blocks["block_flipled"] = {
           name: "action",
           options: [
             ["bật", "1"],
-            ["tắt", "2"],
+            ["tắt", "0"],
             ["đảo trạng thái", "3"]
           ]
         },

@@ -451,6 +451,7 @@ Blockly.Python["block_dht_create"] = function(block) {
   // TODO: Assemble Python into code variable.
   Blockly.Python.definitions_["import_yolobit"] = "from yolobit import *";
   Blockly.Python.definitions_["import_dht"] = "import dht";
+  Blockly.Python.definitions_["import_time"] = "import time";
   var code =
     variable_sensor + " = dht.DHT11" + "(Pin(" + dropdown_port + ".pin))\n";
   return code;
@@ -464,7 +465,7 @@ Blockly.Python["block_dht_measure"] = function(block) {
     Blockly.Variables.NAME_TYPE
   );
   // TODO: Assemble Python into code variable.
-  var code = variable_sensor + ".measure()\n";
+  var code = variable_sensor + ".measure()\ntime.sleep_ms(900)\n";
   return code;
 };
 

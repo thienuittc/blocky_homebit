@@ -645,7 +645,7 @@ Blockly.Python['block_clearlistkey'] = function(block) {
 //   var code = dropdown_port+'.servo_write('+value_goc+');\n';
 //   return code;
 // };
-Blockly.Blocks["block_sound"] = {
+Blockly.Blocks["block_led7"] = {
   init: function() {
     this.jsonInit(
     {

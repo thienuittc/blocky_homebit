@@ -692,13 +692,13 @@ Blockly.Python['block_led7'] = function(block) {
     case 'pin0':
       var code = 'tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))\n';
       break;
-    case 'pin0':
+    case 'pin1':
       var code = 'tm = tm1637.TM1637(clk=Pin(pin1.pin), dio=Pin(pin11.pin))\n';
       break;
-    case 'pin0':
+    case 'pin2':
       var code = 'tm = tm1637.TM1637(clk=Pin(pin2.pin), dio=Pin(pin13.pin))\n';
       break;
-    case 'pin0':
+    case 'pin3':
       var code = 'tm = tm1637.TM1637(clk=Pin(pin3.pin), dio=Pin(pin14.pin))\n';
       break;
   }

@@ -656,19 +656,19 @@ Blockly.Blocks["block_led7"] = {
       "name": "A",
       "options": [
         [
-          "P0",
+          "P0/10",
           "pin0"
         ],
         [
-          "P1",
+          "P1/11",
           "pin1"
         ],
         [
-          "P2",
+          "P2/13",
           "pin2"
         ],
         [
-          "P3",
+          "P3/14",
           "pin3"
         ]
       ]
@@ -676,7 +676,7 @@ Blockly.Blocks["block_led7"] = {
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 230,
+  "colour": 180,
   "tooltip": "",
   "helpUrl": ""
 });
@@ -687,7 +687,22 @@ Blockly.Blocks["block_led7"] = {
 Blockly.Python['block_led7'] = function(block) {
   var dropdown_a = block.getFieldValue('A');
   // TODO: Assemble Python into code variable.
+  
+  switch(dropdown_a){
+    case 'pin0':
+      var code = 'tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))\n';
+      break;
+    case 'pin0':
+      var code = 'tm = tm1637.TM1637(clk=Pin(pin1.pin), dio=Pin(pin11.pin))\n';
+      break;
+    case 'pin0':
+      var code = 'tm = tm1637.TM1637(clk=Pin(pin2.pin), dio=Pin(pin13.pin))\n';
+      break;
+    case 'pin0':
+      var code = 'tm = tm1637.TM1637(clk=Pin(pin3.pin), dio=Pin(pin14.pin))\n';
+      break;
+  }
   //tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))
-  var code = '...\n';
+  //var code = '...\n';
   return code;
 };

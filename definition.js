@@ -645,10 +645,9 @@ Blockly.Python['block_clearlistkey'] = function(block) {
 //   var code = dropdown_port+'.servo_write('+value_goc+');\n';
 //   return code;
 // };
-Blockly.Blocks["block_led7"] = {
+Blockly.Blocks["block_clearlistkey"] = {
   init: function() {
-    this.jsonInit(
-    {
+    this.jsonInit({
   "type": "block_led7",
   "message0": "tạo màn hình led 7 đoạn cổng %1",
   "args0": [
@@ -677,13 +676,13 @@ Blockly.Blocks["block_led7"] = {
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 180,
+  "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}
-    );
+});
   }
 };
+
 
 Blockly.Python['block_led7'] = function(block) {
   var dropdown_a = block.getFieldValue('A');

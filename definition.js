@@ -645,3 +645,50 @@ Blockly.Python['block_clearlistkey'] = function(block) {
 //   var code = dropdown_port+'.servo_write('+value_goc+');\n';
 //   return code;
 // };
+Blockly.Blocks["block_sound"] = {
+  init: function() {
+    this.jsonInit(
+    {
+  "type": "block_led7",
+  "message0": "tạo màn hình led 7 đoạn cổng %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "A",
+      "options": [
+        [
+          "P0",
+          "pin0"
+        ],
+        [
+          "P1",
+          "pin1"
+        ],
+        [
+          "P2",
+          "pin2"
+        ],
+        [
+          "P3",
+          "pin3"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 180,
+  "tooltip": "",
+  "helpUrl": ""
+}
+    );
+  }
+};
+
+Blockly.Python['block_led7'] = function(block) {
+  var dropdown_a = block.getFieldValue('A');
+  // TODO: Assemble Python into code variable.
+  //tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))
+  var code = '...\n';
+  return code;
+};

@@ -694,7 +694,7 @@ Blockly.Python['block_led7'] = function(block) {
     block.getFieldValue("led7doan"),
     Blockly.Variables.NAME_TYPE
   );
-  Blockly.Python.definitions_["import_tm1637"] = "from tm1637 import *";
+  Blockly.Python.definitions_["import_tm1637"] = "import tm1637";
   Blockly.Python.definitions_["import_yolobit"] = "from yolobit import *";
   
   var dropdown_a = block.getFieldValue('A');

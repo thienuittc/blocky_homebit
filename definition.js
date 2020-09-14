@@ -715,3 +715,39 @@ Blockly.Python['block_led7'] = function(block) {
   //var code = '...\n';
   return code;
 };
+
+Blockly.Blocks["block_led7_show"] = {
+  init: function() {
+    this.jsonInit({
+  "type": "block_led7_show",
+  "message0": "%1 in ra %2",
+  "args0": [
+    {
+          type: "field_variable",
+          name: "led7doan",
+          variable: "màn hình led 7 đoạn"
+    },
+    {
+      "type": "field_input",
+      "name": "A",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 180,
+  "tooltip": "",
+  "helpUrl": ""
+});
+  }
+};
+
+Blockly.Python['block_led7_show'] = function(block) {
+  var variable_sensor = Blockly.Python.variableDB_.getName(
+    block.getFieldValue("led7doan"),
+    Blockly.Variables.NAME_TYPE
+  );
+  var text_a = block.getFieldValue('A');
+  var code = variable_sensor+'.show('+text_a+')\n'
+  return code;
+};

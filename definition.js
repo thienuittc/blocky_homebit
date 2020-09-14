@@ -649,8 +649,13 @@ Blockly.Blocks["block_led7"] = {
   init: function() {
     this.jsonInit({
   "type": "block_led7",
-  "message0": "tạo màn hình led 7 đoạn cổng %1",
+  "message0": "tạo %1 cổng %2",
   "args0": [
+    {
+          type: "field_variable",
+          name: "led7doan",
+          variable: "màn hình led 7 đoạn"
+    },
     {
       "type": "field_dropdown",
       "name": "A",
@@ -685,21 +690,25 @@ Blockly.Blocks["block_led7"] = {
 
 
 Blockly.Python['block_led7'] = function(block) {
+  var variable_sensor = Blockly.Python.variableDB_.getName(
+    block.getFieldValue("led7doan"),
+    Blockly.Variables.NAME_TYPE
+  );
   var dropdown_a = block.getFieldValue('A');
   // TODO: Assemble Python into code variable.
   
   switch(dropdown_a){
     case 'pin0':
-      var code = 'tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))\n';
+      var code = variable_sensor+ '= tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))\n';
       break;
     case 'pin1':
-      var code = 'tm = tm1637.TM1637(clk=Pin(pin1.pin), dio=Pin(pin11.pin))\n';
+      var code = variable_sensor+ ' = tm1637.TM1637(clk=Pin(pin1.pin), dio=Pin(pin11.pin))\n';
       break;
     case 'pin2':
-      var code = 'tm = tm1637.TM1637(clk=Pin(pin2.pin), dio=Pin(pin13.pin))\n';
+      var code = variable_sensor+ ' = tm1637.TM1637(clk=Pin(pin2.pin), dio=Pin(pin13.pin))\n';
       break;
     case 'pin3':
-      var code = 'tm = tm1637.TM1637(clk=Pin(pin3.pin), dio=Pin(pin14.pin))\n';
+      var code = variable_sensor+ ' = tm1637.TM1637(clk=Pin(pin3.pin), dio=Pin(pin14.pin))\n';
       break;
   }
   //tm = tm1637.TM1637(clk=Pin(pin0.pin), dio=Pin(pin10.pin))

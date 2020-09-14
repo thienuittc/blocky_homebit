@@ -729,8 +729,7 @@ Blockly.Blocks["block_led7_show"] = {
     },
     {
       "type": "field_input",
-      "name": "A",
-      "text": "default"
+      "name": "A"
     }
   ],
   "previousStatement": null,

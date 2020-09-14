@@ -728,7 +728,7 @@ Blockly.Blocks["block_led7_show"] = {
           variable: "màn hình led 7 đoạn"
     },
     {
-      "type": "field_input",
+      "type": "input_value",
       "name": "A"
     }
   ],
@@ -746,7 +746,7 @@ Blockly.Python['block_led7_show'] = function(block) {
     block.getFieldValue("led7doan"),
     Blockly.Variables.NAME_TYPE
   );
-  var text_a = block.getFieldValue('A');
-  var code = variable_sensor+'.show('+text_a+')\n'
+  var value_text = Blockly.Python.valueToCode(block, 'A', Blockly.Python.ORDER_ATOMIC);
+  var code = variable_sensor+'.show('+value_text+')\n'
   return code;
 };

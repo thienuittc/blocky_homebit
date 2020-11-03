@@ -2,7 +2,7 @@
     "name": "HOME:BIT",
     "description": "Mục mở rộng dành cho bộ sản phẩm nhà thông minh",
     "libs": [
-        "keypad121.py"
+        "keypad121.py","hcsr04.py","tm1637.py"
     ],
     "blocks": [
         "definition.js"
